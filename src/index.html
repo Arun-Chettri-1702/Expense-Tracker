@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense</title>
+    <link rel="stylesheet" href="./output.css" />
+    <script src="script.js" defer></script>
+    <style>
+      .expense {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        margin: 12px;
+        --tw-bg-opacity: 1;
+        background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+        border-radius: 6px;
+      }
+
+      .expense span {
+        font-size: 1.3rem;
+        line-height: 1rem;
+      }
+      .expense button {
+        --tw-bg-opacity: 1;
+        background-color: rgb(126 34 206 / var(--tw-bg-opacity, 1));
+        padding: 0.39rem;
+        border-radius: 6px;
+      }
+      .expense button:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(107 33 168 / var(--tw-bg-opacity, 1));
+      }
+    </style>
+  </head>
+  <body class="bg-gray-950 flex justify-center items-center h-screen w-screen">
+    <main class="bg-gray-800 p-[20px] text-white rounded-md" id="container">
+      <h1 class="text-4xl font-extrabold text-center mb-6">Expense Tracker</h1>
+      <form
+        id="expense-form"
+        class="flex justify-between items-center gap-3 text-black mb-6"
+      >
+        <input
+          type="text"
+          id="expense-name"
+          placeholder="Expense name"
+          class="p-[8px] rounded-md"
+          required
+        />
+        <input
+          type="number"
+          id="expense-amount"
+          placeholder="Amount"
+          step="0.01"
+          required
+          class="p-[8px] rounded-md w-[100px]"
+        />
+        <button
+          type="submit"
+          id="submit"
+          class="text-white p-2 bg-purple-700 rounded-md hover:bg-purple-800"
+        >
+          Add Expense
+        </button>
+      </form>
+
+      <h1 class="text-3xl font-bold mb-3 text-center">Expenses</h1>
+      <ul id="expense-list" class="mb-6">
+        <!-- Expenses will be dynamically added here -->
+      </ul>
+
+      <div id="total">
+        <h3 class="text-2xl font-semibold text-center">
+          Total: $<span id="total-amount">0.00</span>
+        </h3>
+      </div>
+    </main>
+  </body>
+</html>
